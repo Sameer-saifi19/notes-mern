@@ -1,7 +1,6 @@
 'use client'
 
-import { LogOut, Moon, Settings, SquareMenu, Sun, User } from "lucide-react";
-import Link from "next/link";
+import { LogOut, Moon, Settings, Sun, User } from "lucide-react";
 import React from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 import {
@@ -20,10 +19,12 @@ const NavBar = () => {
 
     const { theme, setTheme } = useTheme();
     return (
-        <nav className="p-4 flex items-center justify-between">
-            <SidebarTrigger/>
+        <nav className="p-4 mb-8 flex items-center justify-between">
+            <div className="flex items-center gap-6">
+                <SidebarTrigger className="size-10"/>
+                <span className="text-2xl" >Hi, Sameer</span>
+            </div>
             <div className="flex items-center gap-4">
-                <Link href={"/"}>Dashboard</Link>
 
                 {/* Theme toggle */}
                 <DropdownMenu>
