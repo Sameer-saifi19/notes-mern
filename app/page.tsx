@@ -1,12 +1,15 @@
-import Dashboard from "@/components/Dashboard";
+'use client'
 
-export default function Home() {
-  return (
+import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import React, { useEffect, useState } from 'react';
+
+function App() {
+  return(
     <>
-      <main className="px-10 flex flex-wrap gap-8">
-      <Dashboard/>
-      </main>
+
     </>
-  );
+  )
+  
 }
 
+export default App;

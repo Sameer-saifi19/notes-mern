@@ -1,6 +1,6 @@
 'use client'
 
-import React from "react";
+import React, { useEffect } from "react";
 import {
   Card,
   CardAction,
@@ -10,6 +10,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+
 import { EllipsisVertical, FolderOpenDot, Pencil, Trash } from "lucide-react";
 import {
   DropdownMenu,
@@ -23,6 +24,13 @@ import { Separator } from "./ui/separator";
 
 
 const NoteCard = () => {
+  useEffect(() => {
+    fetch('http://localhost:3000/api/v1/all-notes', {
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    })
+  }, [])
   return (
     <>
       <Card className="w-64 outline-1">

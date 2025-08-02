@@ -22,7 +22,7 @@ const NavBar = () => {
         <nav className="p-4 mb-8 flex items-center justify-between">
             <div className="flex items-center gap-6">
                 <SidebarTrigger className="size-10"/>
-                <span className="text-2xl" >Hi, Sameer</span>
+                <span className="text-2xl font-semibold" >Hi, Sameer</span>
             </div>
             <div className="flex items-center gap-4">
 
