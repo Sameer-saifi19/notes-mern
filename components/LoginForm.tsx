@@ -33,30 +33,30 @@ export default function LoginForm({
   const [error, setError] = useState<string | null>(null)
 
   const onsubmit = async (data: loginSchema) => {
-    // setError('')
-    // const res = await signIn("credentials",{
-    //   email: data.email,
-    //   password: data.password,
-    //   redirect: false
-    // })
+    setError('')
+    const res = await signIn("credentials",{
+      email: data.email,
+      password: data.password,
+      redirect: false
+    })
 
-    // if(res?.ok){
-    //   router.push('/admin/dashboard')
-    // }else{
-    //   setError("Invalid email or password")
-    // }
+    if(res?.ok){
+      router.push('/dashboard')
+    }else{
+      setError("Invalid email or password")
+    }
   }
 
   return (
     <div className={cn("flex flex-col gap-6", className)} {...props}>
       <Card>
         <CardHeader>
-          <CardTitle className="text-center">Sign into Fitx</CardTitle>
+          <CardTitle className="text-center">Sign into MindPad</CardTitle>
           <CardDescription className="text-center">
             Welcome back ! Please sign in to Continue
           </CardDescription>
-            <Button variant="outline" onClick= { () => signIn('google')} className="w-full gap-4 flex">
-               Google
+            <Button onClick= { () => signIn('google')} className="w-full gap-4 mt-2 flex">
+               Sign in with Google
             </Button>
           <div className="flex justify-between items-center mt-2">
             <hr className="w-[47%]" />
@@ -121,7 +121,7 @@ export default function LoginForm({
                 </AnimatePresence>
               <div className="flex flex-col gap-3">
                 <Button  type="submit" className="w-full">
-                  {isSubmitting ? 'signing...' : 'sign in'}
+                  {isSubmitting ? 'signing...' : 'Sign in'}
                 </Button>
               </div>
             </div>

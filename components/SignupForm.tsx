@@ -57,8 +57,8 @@ export default function SignupForm({
                     <CardDescription className="text-center">
                         Welcome! Please fill in your details to get started
                     </CardDescription>
-                    <Button variant="outline" onClick={() => signIn('google')} className="w-full gap-4 flex">
-                        Google
+                    <Button  onClick={() => signIn('google')} className="w-full mt-2  gap-4 flex">
+                        Sign up with Google
                     </Button>
                     <div className="flex justify-between items-center mt-2">
                         <hr className="w-[47%]" />
@@ -70,7 +70,7 @@ export default function SignupForm({
                     <form onSubmit={handleSubmit(onsubmit)}>
                         <div className="flex flex-col gap-6">
                             <div className="grid gap-3">
-                                <Label htmlFor="Fullname">First name</Label>
+                                <Label htmlFor="Fullname">Full name</Label>
                                 <Input
                                     {...register('fullName')}
                                     id="full name"
