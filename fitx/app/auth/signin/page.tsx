@@ -18,7 +18,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from "react";
 import { useRouter } from "next/navigation"
 import { signIn } from "next-auth/react"
-import { GoogleIcon } from "@/components/ui/icons/Google"
 
 export default function Signin() {
   const { register, handleSubmit, formState: { errors, isSubmitting, isValid } } = useForm<loginSchema>({
@@ -51,13 +50,13 @@ export default function Signin() {
     <div className={cn("flex flex-col gap-6")}>
       <Card>
         <CardHeader>
-          <CardTitle className="text-center">Sign into FitX</CardTitle>
+          <CardTitle className="text-center">Sign into MindPad</CardTitle>
           <CardDescription className="text-center">
             Welcome back ! Please sign in to Continue
           </CardDescription>
           <div className="grid mt-4">
             <Button variant="outline" type="submit" onClick={() => signIn('google', { callbackUrl: "/admin/dashboard" })} className="w-full gap-3 flex">
-              <GoogleIcon />Sign in with Google
+              Sign in with Google
             </Button>
           </div>
           <div className="flex justify-between items-center mt-2">

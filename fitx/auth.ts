@@ -49,10 +49,8 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
 
           // Return only user object fields you want exposed to the session
           return {
-            id: user.id,
-            email: user.email,
             name: user.name,
-            role: user.role
+            email: user.email,
           };
         } catch (error) {
           console.error("Authorize error:", error);

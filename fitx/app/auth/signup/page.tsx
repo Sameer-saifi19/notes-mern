@@ -19,7 +19,6 @@ import { signupAction } from "@/actions/user"
 import { useState } from "react"
 import { useRouter } from "next/navigation"
 import { signIn } from "next-auth/react"
-import { GoogleIcon } from "@/components/ui/icons/Google"
 
 export default function Signup() {
     const { register, handleSubmit, formState: { errors, isSubmitting, isValid } } = useForm<signupSchema>({
@@ -51,13 +50,13 @@ export default function Signup() {
         <div className={cn("flex flex-col gap-6")}>
             <Card>
                 <CardHeader>
-                    <CardTitle className="text-center">Create your account</CardTitle>
+                    <CardTitle className="text-center">Create your MindPad account</CardTitle>
                     <CardDescription className="text-center">
                         Welcome! Please fill in your details to get started
                     </CardDescription>
                     <div className="grid mt-4">
                         <Button variant="outline" type="submit" onClick={() => signIn('google', { callbackUrl: "/admin/dashboard" })} className="w-full gap-3 flex">
-                            <GoogleIcon/> Sign in with Google
+                            Sign in with Google
                         </Button>
                     </div>
                     <div className="flex justify-between items-center mt-2">
