@@ -49,6 +49,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
 
           // Return only user object fields you want exposed to the session
           return {
+            id: user.id,
             name: user.name,
             email: user.email,
           };

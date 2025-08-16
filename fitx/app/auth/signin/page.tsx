@@ -37,6 +37,8 @@ export default function Signin() {
       password: data.password
     });
 
+    console.log(result)
+
     if (result?.error) {
       setError("Invalid credentials");
       return;
@@ -55,7 +57,7 @@ export default function Signin() {
             Welcome back ! Please sign in to Continue
           </CardDescription>
           <div className="grid mt-4">
-            <Button variant="outline" type="submit" onClick={() => signIn('google', { callbackUrl: "/admin/dashboard" })} className="w-full gap-3 flex">
+            <Button variant="outline" type="submit" onClick={() => signIn('google', { callbackUrl: "/dashboard" })} className="w-full gap-3 flex">
               Sign in with Google
             </Button>
           </div>
@@ -121,7 +123,7 @@ export default function Signin() {
                   </motion.p>}
               </AnimatePresence>
               <div className="flex flex-col gap-3">
-                <Button disabled={!isValid} type="submit" className="w-full">
+                <Button disabled={!isValid} type="submit" className="w-full text-white">
                   {isSubmitting ? 'signing...' : 'sign in'}
                 </Button>
               </div>

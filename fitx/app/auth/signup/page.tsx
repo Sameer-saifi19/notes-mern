@@ -55,7 +55,7 @@ export default function Signup() {
                         Welcome! Please fill in your details to get started
                     </CardDescription>
                     <div className="grid mt-4">
-                        <Button variant="outline" type="submit" onClick={() => signIn('google', { callbackUrl: "/admin/dashboard" })} className="w-full gap-3 flex">
+                        <Button variant="outline" type="submit" onClick={() => signIn('google', { callbackUrl: "/dashboard" })} className="w-full gap-3 flex">
                             Sign in with Google
                         </Button>
                     </div>
@@ -141,7 +141,7 @@ export default function Signup() {
                                 </motion.p>
                             )}
                             <div className="flex flex-col gap-3">
-                                <Button disabled={!isValid || isSubmitting} type="submit" className="w-full">
+                                <Button disabled={!isValid || isSubmitting} type="submit" className="w-full text-white">
                                     Continue
                                 </Button>
                             </div>
